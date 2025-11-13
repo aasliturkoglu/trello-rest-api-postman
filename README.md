@@ -6,7 +6,7 @@ This project demonstrates how to create boards, lists, card, checklist, and labe
 
 - [Requirements](#requirements)
 - [Getting API Key and Token](#getting-api-key-and-token)
-- [Postman Setting Environment Variables](#postman-setting-enviroment-variables)
+- [Postman Setting Environment Variables](#postman-setting-environment-variables)
 - [API Operations](#api-operations)
   - [Create a Board](#create-a-board)
   - [Create a new List](#create-a-new-list)
