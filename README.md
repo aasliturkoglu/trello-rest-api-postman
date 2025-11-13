@@ -6,7 +6,7 @@ This project demonstrates how to create boards, lists, card, checklist, and labe
 
 - [Requirements](#-requirements)
 - [Getting API Key and Token](#-getting-api-key-and-token)
-- [Postman Setting Environment Variables](#%EF%B8%8F-postman-setting-environment-variables)
+- [Postman Setting Environment and Global Variables](#%EF%B8%8F-postman-setting-environment-variables)
 - [API Operations](#--api-operations)
   - [Create a Board](#1%EF%B8%8F⃣-create-a-board)
   - [Create a new List](#2%EF%B8%8F⃣-create-a-new-list)
@@ -38,7 +38,7 @@ This project demonstrates how to create boards, lists, card, checklist, and labe
 
 7. Then API Key is created and final step click the Token button
 
-## ⚙️ Postman Setting Environment Variables
+## ⚙️ Postman Setting Environment and Global Variables
 
 1. Create a Collection on Trello
 <img height="400" src="https://github.com/user-attachments/assets/46b5e98b-e0ce-4ac2-bbae-e6d4d5f01d26" />
