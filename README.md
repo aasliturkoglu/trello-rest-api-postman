@@ -4,16 +4,16 @@ This project demonstrates how to create boards, lists, card, checklist, and labe
 
 ## 📑 Content
 
-- [Requirements](#requirements)
-- [Getting API Key and Token](#getting-api-key-and-token)
-- [Postman Setting Environment Variables](#postman-setting-environment-variables)
-- [API Operations](#api-operations)
-  - [Create a Board](#create-a-board)
-  - [Create a new List](#create-a-new-list)
-  - [Create a new Card](#create-a-card)
-  - [Create a Checklist](#create-a-checklist)
-  - [Create a Label](#create-a-label)
-- [Collection Runner](#collection-runner)
+- [Requirements](#-requirements)
+- [Getting API Key and Token](#-getting-api-key-and-token)
+- [Postman Setting Environment Variables](#%EF%B8%8F-postman-setting-environment-variables)
+- [API Operations](#--api-operations)
+  - [Create a Board](#1%EF%B8%8F⃣-create-a-board)
+  - [Create a new List](#2%EF%B8%8F⃣-create-a-new-list)
+  - [Create a new Card](#3%EF%B8%8F⃣-create-a-new-card)
+  - [Create a Checklist](#4%EF%B8%8F⃣-create-a-checklist)
+  - [Create a Label](#5%EF%B8%8F⃣-create-a-label)
+- [Collection Runner](#-collection-runner)
 
 ## 📋 Requirements 
 
