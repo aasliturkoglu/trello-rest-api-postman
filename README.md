@@ -13,7 +13,9 @@ This project demonstrates how to create boards, lists, card, checklist, and labe
   - [Create a new Card](#3%EF%B8%8F⃣-create-a-new-card)
   - [Create a Checklist](#4%EF%B8%8F⃣-create-a-checklist)
   - [Create a Label](#5%EF%B8%8F⃣-create-a-label)
-- [Collection Runner](#-collection-runner)
+- [Collection Runner](#%EF%B8%8F-collection-runner)
+- [Dynamic Variables](#-dynamic-variables)
+- [Pre-request Scripts](#-pre-request-scripts)
 
 ## 📋 Requirements 
 
@@ -135,7 +137,7 @@ https://api.trello.com/1/actions/{id}?key=APIKey&token=APIToken ---> the BaseURL
   7. Check the Trello.
 <img height="400" src="https://github.com/user-attachments/assets/d7f6b415-f0ba-409f-8692-5d72793e483c" />
 
-## 🔁 Collection Runner
+## ▶️ Collection Runner
 
   1. Click the name of the collection. Then click the Runs button.
 <img height="400" src="https://github.com/user-attachments/assets/0c8de1c8-a134-4f0c-98b8-480fbc7138fe" />
@@ -149,8 +151,62 @@ https://api.trello.com/1/actions/{id}?key=APIKey&token=APIToken ---> the BaseURL
   4. View the Summary
 <img height="400" src="https://github.com/user-attachments/assets/f878d309-a3e8-4641-b985-346c3855c92f" />
 
+## 🔁 Dynamic Variables
 
+By storing values returned from the API—such as id or name—in a variable, we can reuse them in subsequent requests. This eliminates the need for manual copy-paste and allows Postman to automatically pass data from one response to the next request. As a result, dependent operations can be executed in a seamless, chained, and dynamic workflow.
 
+  1. Saving the ID in the Post-request Script
+    Firstly, In the Tests (Post-request Script) section, we extract the response body and store a specific value (such as an ID) in an environment variable:
+    let response = pm.response.json();
+    pm.environment.set("idboard", response.id);
+  <img height="400" src="https://github.com/user-attachments/assets/25978be8-f416-44b9-83c2-79f2d2549205" />
+  <img height="400" src="https://github.com/user-attachments/assets/7452de83-ebd1-403d-abd2-8b64cdd50eca" />
+
+  The idboard variable we set here will be automatically created and stored in the Environments section. This allows Postman to reuse it in other requests without any manual input.
+
+  2. Using the idboard Variable in Create a List Request
+
+  <img height="400" src="https://github.com/user-attachments/assets/c808946d-940c-478b-8cae-83edb4f72fde" />
+
+  Apply the same process we used in the previous step to save the list ID. After creating the list, extract the response and store the returned id value as an environment variable (e.g., idlist). This will allow us to reuse the list ID in the following requests just like we did with idboard.
+
+  <img height="400" src="https://github.com/user-attachments/assets/a077216e-2319-4012-a636-66302a499d90" />
+
+  You can apply these steps to all operations in the project. By saving each returned ID (board, list, card, checklist, label) as an environment variable, you can easily reuse them in subsequent requests and create fully connected, automated API workflows.
+  
+  Using the Collection Runner, you can run the project multiple times in succession without errors. Since all IDs are dynamically stored and reused via environment variables, the requests remain fully connected and automated, allowing for seamless repeated execution.
+
+## 📝 Pre-request Scripts
+
+Pre-request scripts are executed before sending an API request. They allow us to:
+
+  * Set or update environment and global variables dynamically
+
+  * Generate timestamps, tokens, or random data required for the request
+
+  * Prepare any data or configuration needed for the request to run successfully
+
+Essentially, they let us automate setup tasks so that each request has the correct data and context before execution.
+
+  1. pm.environment.set("nameBoard", "udemy " + parseInt(Math.random()*1000));  in the Pre-request field for nameBoard
+
+<img height="400" src="https://github.com/user-attachments/assets/f7fb6868-a81d-4758-b6d7-95420d88644f" />
+
+  2. Use this nameBoard variable in the request
+
+<img height="400" src="https://github.com/user-attachments/assets/33106ab3-1aba-4fc2-b907-8ef33417072b" />
+
+  3. Write a Test and Check
+
+  let response = pm.response.json(); // we wrote this already
+  pm.test("response name is equal to expected name", function () {
+    pm.expect(response.name).is.eql(pm.environment.get("nameBoard"));
+    console.log("response name: ", response.name);
+    console.log("expected name: ", pm.environment.get("nameBoard"));
+
+});
+
+<img height="400" src="https://github.com/user-attachments/assets/887dc807-911c-47ab-93b3-f1ac11352d19" />
 
 
 
